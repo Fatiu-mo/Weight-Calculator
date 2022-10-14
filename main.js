@@ -98,11 +98,11 @@ const displayResult = (image, pName, calculatedWeight) => {
 
 
 render.addEventListener("click", () => {
-  if (mass.value === "" || select.value === "") {
-    alert("input value in all fields")
-  }
-    const weight = new WeightCalc(mass.value)
+	const weight = new WeightCalc(mass.value)
     //console.log(weight)
+        if (mass.value === "" || select.value === "") {
+            alert("input value in all fields")
+          } else {
     planets.forEach(planet => {
         if (localStorage.data == "earth") {
             displayResult(planet.planet1.image, planet.planet1.name, weight.getEarthWeight())
@@ -126,5 +126,5 @@ render.addEventListener("click", () => {
           displayResult(planet.planet10.image, planet.planet10.name, weight.getUranusWeight())
       }
     })  
-    
+	}
 })
